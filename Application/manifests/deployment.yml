@@ -29,5 +29,4 @@ spec:
             cpu: 500m
       imagePullSecrets:
       - name: gitopsgithub
-    type: LoadBalancer
- 
+  type: LoadBalancer
