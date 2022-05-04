@@ -1,3 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sampleapp
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8000
+      name: sampleappport
+      protocol: TCP
+  selector:
+    app: sampleapp
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
@@ -29,4 +42,3 @@ spec:
             cpu: 500m
       imagePullSecrets:
       - name: gitopsgithub
-  type: LoadBalancer
